@@ -1,0 +1,40 @@
+<template>
+	<div class="sa-grid">
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="done" class="sa-text --secondary">Done</label>
+			<input type="number" value.bind="metrics.done" name="done" class="sa-form_text">
+		</fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="doing" class="sa-text --secondary">Doing</label>
+			<input type="number" value.bind="metrics.doing" name="doing" class="sa-form_text">
+		</fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="status" class="sa-text --secondary">Status</label>
+			<input type="number" value.bind="metrics.status" name="status" class="sa-form_text">
+		</fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="review" class="sa-text --secondary">Code review</label>
+			<input type="number" value.bind="metrics.review" name="review" class="sa-form_text">
+		</fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="reviewed" class="sa-text --secondary">Reviewed</label>
+			<input type="number" value.bind="metrics.reviewed" name="reviewed" class="sa-form_text">
+		</fieldset>
+		<fieldset class="sa-grid_col --one-third@on-desktop"></fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="validation" class="sa-text --secondary">Validation</label>
+			<input type="number" value.bind="metrics.validation" name="validation" class="sa-form_text">
+		</fieldset>
+
+		<fieldset class="sa-grid_col --one-third@on-desktop">
+			<label for="blocked" class="sa-text --secondary">Bloqué</label>
+			<input type="number" value.bind="metrics.blocked" name="blocked" class="sa-form_text">
+		</fieldset>
+		<fieldset class="sa-grid_col --one-third@on-desktop"></fieldset>
+	</div>
+</template>

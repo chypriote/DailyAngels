@@ -1,0 +1,24 @@
+sidebar {
+	position: relative;
+	background-color: #152F53;
+	flex: 23rem 0 0;
+	height: 100%;
+	transition: margin-left 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+	z-index: 3;
+}
+
+.sa-wrapper {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	position: relative;
+	transition: height 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.sa-main_container {
+	position: relative;
+	background-color: whitesmoke;
+	flex: auto 1 1;
+	height: 100%;
+	overflow-y: scroll;
+}

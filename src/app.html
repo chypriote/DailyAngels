@@ -1,0 +1,12 @@
+<template>
+	<require from="./sidebar"></require>
+	<require from="styles/main.css"></require>
+	<require from="styles/custom.css"></require>
+
+	<div class="sa-wrapper">
+		<sidebar></sidebar>
+		<div class="sa-main_container">
+			<router-view class="sa-layout-dashboard-page "></router-view>
+		</div>
+	</div>
+</template>

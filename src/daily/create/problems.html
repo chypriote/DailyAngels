@@ -1,0 +1,38 @@
+<template>
+	<div class="sa-panel">
+		<div class="sa-category-title">
+			<p class="sa-text --bold --mega --emphasis-darker">Problèmes rencontrés</p>
+		</div>
+		<div class="sa-form_row">
+			
+			<p class="sa-text" show.bind="items.length == 0">Il n'y a rien ici !</p>
+
+			<div class="sa-spaced-between" repeat.for="item of items">
+				<div class="sa-spaced-between_item">
+					<p class="sa-text">${item.what}</p>
+					<p class="sa-text --inline"><span class="sa-text --bold --inline">Solution : </span>${item.correction}</p>
+				</div>
+				<div class="sa-spaced-between_item">
+					<button click.delegate="deleteItem(item)" class="sa-call-to-action --pill">
+						<i class="material-icons sa-icon --material">delete</i>
+					</button>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="sa-form_row">
+			<form submit.delegate="addItem()">
+				<div class="sa-form_input-group --call-to-action-input">
+					<div style="flex-grow: 1">
+						<input type="text" name="problem" value.bind="problem.what" placeholder="What was the problem ?" class="sa-form_text">
+						<input type="text" name="correction" value.bind="problem.correction" placeholder="How do we solve it" class="sa-form_text">
+					</div>
+					<button type="submit" class="sa-call-to-action --secondary --call-to-action-input" disabled.bind="!(problem.what && problem.correction)">
+						<i class="material-icons sa-icon --material --mega">add</i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

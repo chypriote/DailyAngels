@@ -1,0 +1,15 @@
+<template>
+	<div class="sa-grid">
+		<div class="sa-grid_col">
+			<div class="sa-category-title">
+				<p class="sa-text --bold --kilo --emphasis-darker">Problèmes rencontrés</p>
+			</div>
+		</div>
+		<div class="sa-grid_col --compressed">
+			<div repeat.for="item of items">
+				<p class="sa-text">${item.what}</p>
+				<p class="sa-text --inline"><span class="sa-text --bold --inline">Solution : </span>${item.correction}</p>
+			</div>
+		</div>
+	</div>
+</template>

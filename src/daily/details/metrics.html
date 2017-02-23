@@ -1,0 +1,43 @@
+<template>
+	<div class="sa-grid">
+
+		<div class="sa-grid_col --one-third@on-desktop">
+			<div>
+				<p class="sa-text --bold --kilo --inline">Done : </p>
+				<p class="sa-text --kilo --inline">${metrics.done} </p>
+			</div>
+			<div>
+				<p class="sa-text --bold --kilo --inline --error" show.bind="metrics.status < 0">Retard : </p>
+				<p class="sa-text --bold --kilo --inline --success" show.bind="metrics.status >= 0">Avance : </p>
+				<p class="sa-text --kilo --inline" class.bind="metrics.status < 0 ? '--error' : '--success'">${metrics.status} </p>
+			</div>
+			<div>
+				<p class="sa-text --bold --kilo --inline">Doing : </p>
+				<p class="sa-text --kilo --inline">${metrics.doing} </p>
+			</div>
+		</div>
+
+		<div class="sa-grid_col --one-third@on-desktop">
+			<div>
+				<p class="sa-text --bold --kilo --inline">Code review : </p>
+				<p class="sa-text --kilo --inline">${metrics.review} </p>
+			</div>
+			<div>
+				<p class="sa-text --bold --kilo --inline">Reviewed : </p>
+				<p class="sa-text --kilo --inline">${metrics.reviewed} </p>
+			</div>
+			<div>
+				<p class="sa-text --bold --kilo --inline">Validation : </p>
+				<p class="sa-text --kilo --inline">${metrics.validation} </p>
+			</div>
+		</div>
+
+		<div class="sa-grid_col --one-third@on-desktop">
+			<div>
+				<p class="sa-text --bold --kilo --inline">Bloqués : </p>
+				<p class="sa-text --kilo --inline">${metrics.blocked} </p>
+			</div>
+		</div>
+
+	</div>
+</template>

@@ -1,0 +1,31 @@
+{
+	"dailys": [
+		{
+			"id": 5,
+			"current_sprint": "Sprint #72",
+			"date": "12-03",
+			"metrics": {
+				"doing": 5,
+				"done": 12,
+				"status": 7,
+				"review": 3,
+				"reviewed": 8,
+				"blocked": 0,
+				"validation": 4
+			},
+			"yesterday": [
+				"Corriger des bugs sur le site",
+				"Continuer la mise en place du serveur staging Carapuce"
+			],
+			"today": [
+				"Ceci est un jambon",
+				"Traité le bug de signature de l'act d'adhésion!!!!",
+				"Continué sur les emails non reçus des admins"
+			],
+			"problems": [
+				{"what": "Un problem", "correction": "une solution"},
+				{"what": "Aie aie aie yayaya", "correction": "mais c'est pas possible"}
+			]
+		}
+	]
+}

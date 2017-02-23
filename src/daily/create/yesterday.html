@@ -1,0 +1,32 @@
+<template>
+	<div class="sa-panel">
+		<div class="sa-category-title">
+			<p class="sa-text --bold --mega --emphasis-darker">Hier, nous avons</p>
+		</div>
+		<div class="sa-form_row">
+			
+			<p class="sa-text" show.bind="items.length == 0">Il n'y a rien ici !</p>
+
+			<div class="sa-spaced-between" repeat.for="item of items">
+				<div class="sa-spaced-between_item">
+					<p class="sa-text">${item}</p>
+				</div>
+				<div class="sa-spaced-between_item">
+					<button click.delegate="deleteItem(item)" class="sa-call-to-action --pill">
+						<i class="material-icons sa-icon --material">delete</i>
+					</button>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="sa-form_row">
+			<form submit.delegate="addItem()" class="sa-form_input-group --call-to-action-input">
+				<input type="text" name="yesterday" value.bind="newitem" placeholder="What did we do ?" class="sa-form_text --call-to-action-input">
+				<button type="submit" class="sa-call-to-action --call-to-action-input --secondary" disabled.bind="!newitem">
+					<i class="material-icons sa-icon --material --mega">add</i>
+				</button>
+			</div>
+		</div>
+	</div>
+</template>

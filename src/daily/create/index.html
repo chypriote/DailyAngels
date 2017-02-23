@@ -1,0 +1,77 @@
+<template>
+	<require from="./yesterday"></require>
+	<require from="./today"></require>
+	<require from="./problems"></require>
+	<require from="./metrics"></require>
+
+	<div class="sa-layout-dashboard-page_title">
+		<h1 class="sa-text --mega --bold">Ajouter un daily</h1>
+	</div>
+	<div class="sa-layout-dashboard-page_content">
+		<div class="sa-grid">
+
+			<div class="sa-grid_col --one-third@on-desktop">
+				<div class="sa-panel">
+					<div class="sa-category-title">
+						<p class="sa-text --bold --mega --emphasis-darker">Sprint Progress</p>
+					</div>
+					
+					<div class="sa-form_row">
+						<div class="sa-grid">
+							<div class="sa-grid_col --half@on-desktop">
+								<fieldset>
+									<label for="current_sprint" class="sa-text --secondary">Current Sprint</label>
+									<select value.bind="daily.current_sprint" name="current_sprint" class="sa-form_select --full">
+										<option value="75">Sprint #75</option>
+										<option value="76">Sprint #76</option>
+										<option value="77">Sprint #77</option>
+										<option value="78">Sprint #78</option>
+										<option value="79">Sprint #79</option>
+									</select>
+								</fieldset>
+							</div>
+							<div class="sa-grid_col --half@on-desktop">
+								<fieldset>
+									<label for="current_day" class="sa-text --secondary">Day</label>
+									<select value.bind="daily.date" name="current_sprint" class="sa-form_select --full">
+										<option value="12-03">Lundi 12</option>
+										<option value="13-03">Mardi 13</option>
+										<option value="14-03">Mercredi 14</option>
+										<option value="15-03">Jeudi 15</option>
+										<option value="16-03">Vendredi 16</option>
+									</select>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+
+					<div class="sa-form_row">
+						<hr class="sa-line --dashboard">
+					</div>
+
+					<div class="sa-form_row">
+						<metrics metrics.bind="daily.metrics"></metrics>
+					</div>
+				</div>
+
+				<div class="sa-form_row">
+					<div class="sa-call-to-action --full" click.delegate="saveDaily()">Enregistrer</div>
+				</div>
+			</div>
+
+			<div class="sa-grid_col --two-thirds@on-desktop">
+				<div class="sa-grid">
+					<div class="sa-grid_col">
+						<yesterday items.bind="daily.yesterday"></yesterday>
+					</div>
+					<div class="sa-grid_col">
+						<today items.bind="daily.today"></today>
+					</div>
+					<div class="sa-grid_col">
+						<problems items.bind="daily.problems"></problems>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

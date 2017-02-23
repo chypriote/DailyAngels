@@ -1,0 +1,26 @@
+<template>
+	<nav class="sa-sidebar">
+		<ul class="sa-sidebar_section">
+			<li class="sa-sidebar_item --first">
+				<a href="#" class="sa-sidebar_entry">
+					<img alt="" src="https://www.fortuneo.fr/cmsassets/6J0bEuwyDCWgyyaeI62igg/dd16320c8250df63b8d777f394f422c0/fortuneo-crowdfunding-investissement-participatif-smartangels.svg" width="100%">
+				</a>
+			</li>
+			<ul class="sa-sidebar_list-items --first"></ul>
+			<li class="sa-sidebar_item" repeat.for="row of router.navigation">
+				<a href.bind="row.href" class="sa-sidebar_entry" class.bind="row.isActive ? '--active' : ''">
+					<div class="sa-sidebar_illustration --icon">
+						<p class="sa-text --align-center --tertiary">
+							<i class="material-icons sa-icon --material --mega">${row.settings.icon}</i>
+						</p>
+					</div>
+					<p class="sa-text --bold --tertiary">
+						<span class="sa-sidebar_entry-text">
+							${row.title}
+						</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</template>
