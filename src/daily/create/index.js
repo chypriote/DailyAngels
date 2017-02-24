@@ -2,7 +2,7 @@ import {inject, NewInstance} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import {Daily} from '../../Entity/Daily';
 import {DailyAPI} from '../DailyAPI';
-import {ValidationController, ValidationRules} from 'aurelia-validation';
+import {ValidationController} from 'aurelia-validation';
 
 @inject(Router, NewInstance.of(ValidationController))
 export class Create {
@@ -23,7 +23,7 @@ export class Create {
 					let api = new DailyAPI();
 					api.postDaily(vm.daily)
 						.then(response => vm.router.navigateToRoute('dailyDetails', {id: response.id}))
-						.catch(error => console.log(error));
+						.catch(error => console.warn(error));
 
 				} else {
 					vm.errors = result.results.filter(el => !el.valid);

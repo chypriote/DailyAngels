@@ -1,4 +1,8 @@
 import environment from './environment';
+import moment from 'moment';
+import 'moment/locale/fr';
+
+moment.locale('fr-FR');
 
 //Configure Bluebird Promises.
 Promise.config({

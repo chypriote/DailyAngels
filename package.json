@@ -15,8 +15,10 @@
     "aurelia-http-client": "^1.0.4",
     "aurelia-validation": "^1.0.0-beta.1.0.1",
     "bluebird": "^3.4.1",
+    "moment": "^2.17.1",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text#latest"
+    "text": "github:requirejs/text#latest",
+    "underscore": "^1.8.3"
   },
   "peerDependencies": {},
   "devDependencies": {

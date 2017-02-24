@@ -148,6 +148,16 @@
             "name": "aurelia-validation",
             "path": "../node_modules/aurelia-validation/dist/amd",
             "main": "aurelia-validation"
+          },
+          {
+            "name": "underscore",
+            "path": "../node_modules/underscore",
+            "main": "underscore-min"
+          },
+          {
+            "name": "moment",
+            "path": "../node_modules/moment",
+            "main": "moment"
           }
         ]
       }

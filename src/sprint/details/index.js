@@ -1,17 +1,21 @@
-import {Daily} from '../../Entity/Daily';
-import {DailyAPI} from '../DailyAPI';
+import {Sprint} from '../../Entity/Sprint';
+import {SprintAPI} from '../SprintAPI';
 
-export class DailyDetails {
-	
+export class SprintDetails {
+
 	activate(params, routeConfig) {
 		this.routeConfig = routeConfig;
-		let api = new DailyAPI();
+		let api = new SprintAPI();
 		let vm = this;
 
-		api.getDaily(params.id)
+		api.getSprint(params.id)
 			.then(response => {
-				vm.daily = new Daily(response);
-				vm.routeConfig.navModel.setTitle('Daily ' + vm.daily.date);
+				vm.sprint = new Sprint(response);
+				vm.routeConfig.navModel.setTitle('Sprint #' + vm.sprint.id);
+				api.getSprintDailys(params.id).then(response => {
+					vm.sprint.dailys = response;
+				})
+				.catch(error => console.warn(error));
 			})
 			.catch(error => console.warn(error));
 
@@ -34,6 +38,6 @@ export class DailyDetails {
 				}
 			]
 		}
+		
 	}
-
 }

@@ -1,0 +1,87 @@
+<template>
+	<require from="../../../generic/date-format.filter"></require>
+	<require from="../../../generic/capitalize.filter"></require>
+
+	<div class="sa-panel" show.bind="days.length > 0">
+		<div class="sa-category-title">
+			<p class="sa-text --bold --giga --emphasis-darker">Développeurs</p>
+		</div>
+
+		<div class="sa-form_row">
+
+			<div class="sa-flash-message --error" show.bind="devs.length == 0">
+				Ajoutez un développeur pour commencer
+			</div>
+
+			<div class="sa-table" show.bind="devs.length > 0">
+				<table class="sa-table_container">
+
+					<thead>
+						<tr class="sa-table_row --light --bordered">
+							<th class="sa-table_cell" width="10%">
+								<p class="sa-text --bold --micro --uppercase --one-liner">Développeur</p>
+							</th>
+							<th class="sa-table_cell" repeat.for="day of days" width="5%">
+								<p class="sa-text --bold --micro --uppercase --one-liner">${day |dateFormat:'ddd D'}</p>
+							</th>
+							<th width="100%"></th>
+							<th class="sa-table_cell">
+								<p class="sa-text --bold --micro --uppercase --one-liner">Action</p>
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr class="sa-table_row" repeat.for="dev of devs">
+							<td class="sa-table_cell">
+								<input type="text" class="sa-form_text" value.bind="dev.name">
+							</td>
+							<td class="sa-table_cell" repeat.for="day of dev.workdays">
+								<input type="text" class="sa-form_text" value.bind="dev.workdays[$index]">
+							</td>
+							<td width="100%"></td>
+							<td class="sa-table_cell">
+								<button class="sa-call-to-action --pill" click.delegate="deleteDevelopper(dev)">
+									<i class="sa-icon --material --inherit">delete</i>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+
+					<tfoot>
+						<tr class="sa-table_row --light --bordered">
+							<th class="sa-table_cell" width="10%">
+								<p class="sa-text --bold --micro --uppercase --one-liner">Total</p>
+							</th>
+							<th class="sa-table_cell" repeat.for="day of days" width="5%">
+								<p class="sa-text --bold --micro --uppercase --one-liner --align-center">${work[$index]}</p>
+							</th>
+							<th width="100%"></th>
+							<th width="100%"></th>
+						</tr>
+					</tfoot>
+
+				</table>
+			</div>
+		</div>
+
+		<div class="sa-form_row">
+			<div class="sa-action-bar">
+
+				<div class="sa-action-bar_action">
+					<button class="sa-call-to-action --secondary" click.delegate="generateWorkTable()" show.bind="devs.length > 0">
+						<i class="material-icons sa-icon --material">cached</i> Recalculer
+					</button>
+				</div>
+
+				<div class="sa-action-bar_action --last">
+					<button class="sa-call-to-action" click.delegate="addDevelopper()">
+						<i class="material-icons sa-icon --material">person_add</i> Ajouter
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</template>
