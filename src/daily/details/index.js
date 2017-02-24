@@ -1,6 +1,5 @@
-import {Daily} from '../Entity/Daily';
+import {Daily} from '../../Entity/Daily';
 import {DailyAPI} from '../DailyAPI';
-import {Yesterday, Today, Problems} from './content';
 
 export class Details {
 	

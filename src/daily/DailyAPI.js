@@ -22,4 +22,13 @@ export class DailyAPI {
 				.catch(error => reject(error));
 		});
 	}
+
+	postDaily(daily) {
+		let vm = this;
+		return new Promise(function (resolve, reject) {
+			vm.client.post('http://localhost:3000/dailys', daily)
+				.then(response => resolve(JSON.parse(response.response)))
+				.catch(error => reject(error));
+		});
+	}
 }

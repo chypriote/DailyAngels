@@ -10,6 +10,7 @@ export function configure(aurelia) {
     .standardConfiguration()
     .feature('resources')
     .plugin('aurelia-chart')
+    .plugin('aurelia-validation');
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
