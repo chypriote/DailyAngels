@@ -21,6 +21,9 @@ export class Graph {
 		Object.assign(this, data);
 	}
 
+	/*
+	** param: array of datapoints
+	*/
 	generateExpectedData(data) {
 		this.expected = {
 			label: 'Prevision',
@@ -32,6 +35,10 @@ export class Graph {
 		this.expected.data = data;
 		this.regenerate();
 	}
+
+	/*
+	** param: array of datapoints
+	*/
 	generateCurrentData(data) {
 		this.current = {
 			label: 'Actuel',
@@ -43,6 +50,10 @@ export class Graph {
 		this.current.data = data;
 		this.regenerate();
 	}
+
+	/*
+	** param: array of labels
+	*/
 	setLabels(labels) {
 		this.labels = labels;
 		this.regenerate();

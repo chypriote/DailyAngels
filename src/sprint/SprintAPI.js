@@ -35,7 +35,7 @@ export class SprintAPI {
 	getSprintDailys(id) {
 		let vm = this;
 		return new Promise(function (resolve, reject) {
-			vm.client.get('http://localhost:3000/dailys?current_sprint=' + id)
+			vm.client.get('http://localhost:3000/dailys?sprint_id=' + id)
 				.then(response => resolve(JSON.parse(response.response)))
 				.catch(error => reject(error));
 		});

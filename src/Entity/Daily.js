@@ -15,6 +15,6 @@ export class Daily {
 ValidationRules
 	.ensure('today').displayName('Aujourd\'hui').required()
 	.ensure('yesterday').displayName('Hier').required()
-	.ensure('current_sprint').displayName('Sprint').required()
+	.ensure('sprint_id').displayName('Sprint').required()
 	.ensure('date').displayName('Date').required()
 	.on(Daily);
