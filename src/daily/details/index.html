@@ -1,8 +1,8 @@
 <template>
 	<require from="./metrics"></require>
-	<require from="./yesterday"></require>
-	<require from="./today"></require>
-	<require from="./problems"></require>
+	<require from="./components/yesterday"></require>
+	<require from="./components/today"></require>
+	<require from="./components/problems"></require>
 
 	<div class="sa-layout-dashboard-page_title">
 		<h1 class="sa-text --mega --bold">Daily du ${daily.date}</h1>
@@ -12,7 +12,9 @@
 			<div class="sa-grid_col --three-quarters@on-desktop">
 				<div class="sa-panel">
 					<div class="sa-category-title">
-						<p class="sa-text --bold --giga --emphasis-darker">${daily.current_sprint}</p>
+						<a route-href="route: sprintDetails; params.bind: {id: daily.current_sprint}" class="sa-text --bold --giga --emphasis-darker">
+							Sprint #${daily.current_sprint}
+						</a>
 					</div>
 
 					<div class="sa-form_row">

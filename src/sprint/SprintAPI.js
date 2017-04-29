@@ -1,32 +1,41 @@
 import {HttpClient} from 'aurelia-http-client';
 
-export class DailyAPI {
+export class SprintAPI {
 	constructor() {
 		this.client = new HttpClient();
 	}
 
-	getDailys() {
+	getSprints() {
 		let vm = this;
 		return new Promise(function (resolve, reject) {
-			vm.client.get('http://localhost:3000/dailys')
+			vm.client.get('http://localhost:3000/sprints')
 				.then(response => resolve(JSON.parse(response.response)))
 				.catch(error => reject(JSON.parse(error)));
 		});
 	}
 
-	getDaily(id) {
+	getSprint(id) {
 		let vm = this;
 		return new Promise(function (resolve, reject) {
-			vm.client.get('http://localhost:3000/dailys/' + id)
+			vm.client.get('http://localhost:3000/sprints/' + id)
 				.then(response => resolve(JSON.parse(response.response)))
 				.catch(error => reject(error));
 		});
 	}
 
-	postDaily(daily) {
+	postSprint(sprint) {
 		let vm = this;
 		return new Promise(function (resolve, reject) {
-			vm.client.post('http://localhost:3000/dailys', daily)
+			vm.client.post('http://localhost:3000/sprints', sprint)
+				.then(response => resolve(JSON.parse(response.response)))
+				.catch(error => reject(error));
+		});
+	}
+
+	getSprintDailys(id) {
+		let vm = this;
+		return new Promise(function (resolve, reject) {
+			vm.client.get('http://localhost:3000/dailys?current_sprint=' + id)
 				.then(response => resolve(JSON.parse(response.response)))
 				.catch(error => reject(error));
 		});

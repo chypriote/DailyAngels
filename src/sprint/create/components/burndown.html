@@ -1,0 +1,11 @@
+<template>
+	<div class="sa-panel">
+		<div class="sa-category-title">
+			<p class="sa-text --bold --giga --emphasis-darker">Burndown Chart</p>
+		</div>
+
+		<div class="sa-form_row">
+			<chart type="line" style="width: 100%; height: auto; display: block;" data.bind="graph.display" should-update="true" native-options.bind="graph.options"></chart>
+		</div>
+	</div>
+</template>

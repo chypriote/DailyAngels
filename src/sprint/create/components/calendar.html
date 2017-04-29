@@ -1,0 +1,41 @@
+<template>
+	<require from="../../../generic/date-format.filter"></require>
+	<require from="../../../generic/capitalize.filter"></require>
+
+	<div class="sa-panel" show.bind="limit !== 0">
+		<div class="sa-category-title">
+			<p class="sa-text --bold --giga --emphasis-darker">Calendrier</p>
+		</div>
+		<div class="sa-form_row">
+			<div class="sa-flash-message --error" show.bind="error">
+				${error}
+			</div>
+			<table class="sa-table_container" show.bind="!error">
+				<thead>
+				<tr class="sa-table_row --light --bordered-light">
+					<th class="sa-table_cell --light">
+						<p class="sa-text --bold">Jour</p>
+					</th>
+					<th class="sa-table_cell --light">
+						<p class="sa-text --bold --align-right">Actif</p>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="sa-table_row --light ${$last ? '' : '--bordered-light'}" repeat.for="day of days">
+					<td class="sa-table_cell --light">
+            <span class="sa-text --micro">
+              ${day | dateFormat:'dddd D MMMM' |capitalize}
+            </span>
+					</td>
+					<td class="sa-table_cell --light">
+            <span class="sa-text --bold --align-right">
+						<i class="material-icons sa-icon --material">check</i>
+            </span>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>

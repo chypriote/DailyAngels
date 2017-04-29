@@ -1,0 +1,32 @@
+<template>
+	<require from='./components/dailys'></require>
+
+	<div class="sa-layout-dashboard-page_title">
+		<h1 class="sa-text --mega --bold">Sprint #${sprint.id}</h1>
+		<h2 class="sa-text --tertiary">${sprint.goal}</h2>
+	</div>
+	<div class="sa-layout-dashboard-page_content">
+		<div class="sa-grid">
+			<div class="sa-grid_col --three-quarters@on-desktop">
+				<div class="sa-panel">
+					<div class="sa-category-title">
+						<p class="sa-text --bold --giga --emphasis-darker">Test</p>
+					</div>
+
+					<div class="sa-form_row">
+						<dailys items.bind="sprint.dailys"></dailys>
+					</div>
+
+					<div class="sa-form_row">
+						<hr class="sa-line --dashboard"></hr>
+					</div>
+
+					<div class="sa-form_row">
+						<chart type="line" style="width: 100%; height: auto; display: block;"  data.bind="test"></chart>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

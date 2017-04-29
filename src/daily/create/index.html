@@ -1,7 +1,7 @@
 <template>
-	<require from="./yesterday"></require>
-	<require from="./today"></require>
-	<require from="./problems"></require>
+	<require from="./components/yesterday"></require>
+	<require from="./components/today"></require>
+	<require from="./components/problems"></require>
 	<require from="./metrics"></require>
 
 	<div class="sa-layout-dashboard-page_title">
@@ -9,6 +9,12 @@
 	</div>
 	<div class="sa-layout-dashboard-page_content">
 		<div class="sa-grid">
+
+			<div class="sa-grid_col">
+				<div class="sa-flash-message --error" show.bind="errors">
+					Les champs <span repeat.for="error of errors">${error.rule.property.displayName} </span> sont obligatoires.
+				</div>
+			</div>
 
 			<div class="sa-grid_col --one-third@on-desktop">
 				<div class="sa-panel">
@@ -21,7 +27,7 @@
 							<div class="sa-grid_col --half@on-desktop">
 								<fieldset>
 									<label for="current_sprint" class="sa-text --secondary">Current Sprint</label>
-									<select value.bind="daily.current_sprint" name="current_sprint" class="sa-form_select --full">
+									<select value.bind="daily.current_sprint & validate" name="current_sprint" class="sa-form_select --full">
 										<option value="75">Sprint #75</option>
 										<option value="76">Sprint #76</option>
 										<option value="77">Sprint #77</option>
@@ -33,7 +39,7 @@
 							<div class="sa-grid_col --half@on-desktop">
 								<fieldset>
 									<label for="current_day" class="sa-text --secondary">Day</label>
-									<select value.bind="daily.date" name="current_sprint" class="sa-form_select --full">
+									<select value.bind="daily.date & validate" name="current_sprint" class="sa-form_select --full">
 										<option value="12-03">Lundi 12</option>
 										<option value="13-03">Mardi 13</option>
 										<option value="14-03">Mercredi 14</option>
@@ -50,25 +56,27 @@
 					</div>
 
 					<div class="sa-form_row">
-						<metrics metrics.bind="daily.metrics"></metrics>
+						<metrics metrics.bind="daily.metrics & validate"></metrics>
 					</div>
 				</div>
 
 				<div class="sa-form_row">
-					<div class="sa-call-to-action --full" click.delegate="saveDaily()">Enregistrer</div>
+					<button class="sa-call-to-action --full" click.delegate="saveDaily()">
+						<i class="material-icons sa-icon --material">save</i> Enregistrer
+					</button>
 				</div>
 			</div>
 
 			<div class="sa-grid_col --two-thirds@on-desktop">
 				<div class="sa-grid">
 					<div class="sa-grid_col">
-						<yesterday items.bind="daily.yesterday"></yesterday>
+						<yesterday items.bind="daily.yesterday & validate"></yesterday>
 					</div>
 					<div class="sa-grid_col">
-						<today items.bind="daily.today"></today>
+						<today items.bind="daily.today & validate"></today>
 					</div>
 					<div class="sa-grid_col">
-						<problems items.bind="daily.problems"></problems>
+						<problems items.bind="daily.problems & validate"></problems>
 					</div>
 				</div>
 			</div>

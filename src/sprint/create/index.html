@@ -1,0 +1,102 @@
+<template>
+	<require from="./components/calendar"></require>
+	<require from="./components/developpers"></require>
+	<require from="./components/burndown"></require>
+	<require from="../../generic/date-picker"></require>
+	<require from="../../generic/date-format.filter"></require>
+
+	<div class="sa-layout-dashboard-page_title">
+		<h1 class="sa-text --mega --bold">Ajouter un sprint</h1>
+	</div>
+	<div class="sa-layout-dashboard-page_content">
+		<div class="sa-grid">
+
+			<div class="sa-grid_col">
+				<div class="sa-flash-message --error" show.bind="errors">
+					Les champs <span repeat.for="error of errors">"${error.rule.property.displayName}" </span> sont obligatoires.
+				</div>
+			</div>
+
+			<div class="sa-grid_col --one-third@on-desktop">
+				<div class="sa-panel">
+					<div class="sa-category-title">
+						<p class="sa-text --bold --giga --emphasis-darker">Informations</p>
+					</div>
+
+					<div class="sa-form_row">
+						<div class="sa-grid">
+							<div class="sa-grid_col --two-thirds@on-desktop">
+								<fieldset>
+									<label for="goal" class="sa-text --secondary">Sprint Goal</label>
+									<input type="text" id="goal" name="goal" value.bind="sprint.goal & validate" class="sa-form_text">
+								</fieldset>
+							</div>
+							<div class="sa-grid_col --one-third@on-desktop">
+								<fieldset>
+									<label for="id" class="sa-text --secondary">ID</label>
+									<input type="text" id="id" name="id" value.bind="sprint.id & validate" class="sa-form_text">
+								</fieldset>
+							</div>
+						</div>
+					</div>
+
+					<div class="sa-form_row">
+						<fieldset>
+							<label for="begin" class="sa-text --secondary">Début</label>
+							<date-picker date.two-way="sprint.begin & validate"></date-picker>
+						</fieldset>
+					</div>
+					<div class="sa-form_row">
+						<fieldset>
+							<label for="end" class="sa-text --secondary">Fin</label>
+							<date-picker date.two-way="sprint.end & validate"></date-picker>
+						</fieldset>
+					</div>
+
+					<div class="sa-form_row">
+						<div class="sa-grid">
+							<div class="sa-grid_col --one-third@on-desktop">
+								<fieldset>
+									<label for="celerity" class="sa-text --secondary">Célérité</label>
+									<input type="text" id="celerity" name="celerity" value.bind="sprint.celerity & validate" class="sa-form_text">
+								</fieldset>
+							</div>
+							<div class="sa-grid_col --one-third@on-desktop"></div>
+							<div class="sa-grid_col --one-third@on-desktop"></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="sa-form_row">
+					<button class="sa-call-to-action --full" click.delegate="saveSprint()" if.bind="graph.calculated">
+						<i class="material-icons sa-icon --material">save</i> Enregistrer
+					</button>
+				</div>
+			</div>
+
+			<div class="sa-grid_col --two-thirds@on-desktop">
+				<burndown show.bind="graph.calculated" graph.bind="graph"></burndown>
+			</div>
+
+			<div class="sa-grid_col">
+				<developpers days.bind="sprint.days" devs.two-way="sprint.devs" celerity.bind="sprint.celerity"></developpers>
+			</div>
+
+			<div class="sa-grid_col">
+				<div class="sa-action-bar" show.bind="sprint.devs.length > 0">
+					<div class="sa-action-bar_action">
+						<button class="sa-call-to-action" click.delegate="generateGraph()">
+							<i class="material-icons sa-icon --material">show_chart</i> Générer le BDC
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="sa-grid_col" show.bind="false">
+				<calendar begin.two-way="sprint.begin" end.two-way="sprint.end" days.two-way="sprint.days"></calendar>
+			</div>
+
+		</div>
+	</div>
+</template>
