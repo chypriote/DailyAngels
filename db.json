@@ -3,83 +3,6 @@
     {
       "celerity": 6,
       "days": [
-        "2017-03-01T15:25:11.739Z",
-        "2017-03-02T15:25:11.739Z",
-        "2017-03-03T15:25:11.739Z",
-        "2017-03-06T15:25:11.739Z"
-      ],
-      "begin": "2017-03-01T15:25:11.739Z",
-      "end": "2017-03-05T23:00:00.000Z",
-      "devs": [
-        {
-          "name": "Nico",
-          "workdays": [
-            1,
-            1,
-            1,
-            1
-          ]
-        }
-      ],
-      "id": 77
-    },
-    {
-      "celerity": 6,
-      "days": [
-        "2017-03-01T15:26:50.206Z",
-        "2017-03-02T15:26:50.206Z",
-        "2017-03-03T15:26:50.206Z",
-        "2017-03-06T15:26:50.206Z",
-        "2017-03-07T15:26:50.206Z",
-        "2017-03-08T15:26:50.206Z"
-      ],
-      "begin": "2017-03-01T15:26:50.206Z",
-      "end": "2017-03-07T23:00:00.000Z",
-      "devs": [
-        {
-          "name": null,
-          "workdays": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ]
-        }
-      ],
-      "id": 78
-    },
-    {
-      "celerity": 6,
-      "days": [
-        "2017-03-01T15:28:07.323Z",
-        "2017-03-02T15:28:07.323Z",
-        "2017-03-03T15:28:07.323Z",
-        "2017-03-06T15:28:07.323Z",
-        "2017-03-07T15:28:07.323Z",
-        "2017-03-08T15:28:07.323Z"
-      ],
-      "begin": "2017-03-01T15:28:07.323Z",
-      "end": "2017-03-07T23:00:00.000Z",
-      "devs": [
-        {
-          "name": null,
-          "workdays": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ]
-        }
-      ],
-      "id": 79
-    },
-    {
-      "celerity": 6,
-      "days": [
         "2017-03-20T11:23:41.070Z",
         "2017-03-21T11:23:41.070Z",
         "2017-03-22T11:23:41.070Z",
@@ -165,37 +88,55 @@
   ],
   "dailys": [
     {
-      "id": 5,
-      "current_sprint": "75",
-      "date": "12-03",
-      "metrics": {
-        "doing": 5,
-        "done": 12,
-        "status": 7,
-        "review": 3,
-        "reviewed": 8,
-        "blocked": 0,
-        "validation": 4
-      },
-      "yesterday": [
-        "Corriger des bugs sur le site",
-        "Continuer la mise en place du serveur staging Carapuce"
-      ],
       "today": [
-        "Ceci est un jambon",
-        "Traité le bug de signature de l'act d'adhésion!!!!",
-        "Continué sur les emails non reçus des admins"
+        "Cacacsqdsq"
+      ],
+      "yesterday": [
+        "Test"
+      ],
+      "problems": [],
+      "metrics": {
+        "done": "5",
+        "doing": "6",
+        "status": "7",
+        "review": "5",
+        "reviewed": "2",
+        "validation": "1",
+        "blocked": "2"
+      },
+      "sprint_id": "23",
+      "date": "2017-03-23T11:23:41.070Z",
+      "id": 6
+    },
+    {
+      "today": [
+        "OSpOZEpaoeza",
+        "zaezaezaeaz",
+        "zeaezaez"
+      ],
+      "yesterday": [
+        "SAlut",
+        "Reposnerazeaz"
       ],
       "problems": [
         {
-          "what": "Un problem",
-          "correction": "une solution"
-        },
-        {
-          "what": "Aie aie aie yayaya",
-          "correction": "mais c'est pas possible"
+          "what": "Aucna",
+          "correction": "Sakeaz"
         }
-      ]
+      ],
+      "metrics": {
+        "done": "12",
+        "doing": "5",
+        "status": "3",
+        "review": "4",
+        "reviewed": "5",
+        "validation": "6",
+        "blocked": "7"
+      },
+      "sprint": null,
+      "date": "2017-03-20T11:23:41.070Z",
+      "sprint_id": "23",
+      "id": 7
     }
   ]
 }

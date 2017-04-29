@@ -3,9 +3,11 @@
 	<require from="./components/yesterday"></require>
 	<require from="./components/today"></require>
 	<require from="./components/problems"></require>
+	<require from="../../generic/date-format.filter"></require>
+	<require from="../../generic/capitalize.filter"></require>
 
 	<div class="sa-layout-dashboard-page_title">
-		<h1 class="sa-text --mega --bold">Daily du ${daily.date}</h1>
+		<h1 class="sa-text --mega --bold">Daily du ${daily.date | dateFormat:'dddd D MMMM' |capitalize}</h1>
 	</div>
 	<div class="sa-layout-dashboard-page_content">
 		<div class="sa-grid">

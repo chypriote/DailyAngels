@@ -11,12 +11,12 @@ export class DailyDetails {
 		api.getDaily(params.id)
 			.then(response => {
 				vm.daily = new Daily(response);
-				vm.routeConfig.navModel.setTitle('Daily ' + vm.daily.date);
+				vm.routeConfig.navModel.setTitle('Daily ' + moment(vm.daily.date).format('dddd D MMMM'));
 			})
 			.catch(error => console.warn(error));
 
 		this.test = {
-			labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
+			labels: ['Lundi 2', 'Mardi 3', 'Mercredi', 'Jeudi', 'Vendredi', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
 			datasets: [
 				{
 					label: 'Prevision',
