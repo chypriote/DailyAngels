@@ -13,12 +13,14 @@ export class Create {
 		this.router = router;
 		this.controller = controller;
 		this.sprints = [];
+		this.loaded = false;
 
 		let api = new SprintAPI();
 
-		api.getSprints()
-			.then(response => this.sprints = response)
-			.catch(error => console.warn(error));
+    api.getSprints()
+      .then(response => this.sprints = response)
+      .catch(error => console.log(error))
+      .finally(() => this.loaded = true);
 	}
 
 	saveDaily() {

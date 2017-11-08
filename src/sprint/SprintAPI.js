@@ -10,7 +10,7 @@ export class SprintAPI {
 		return new Promise(function (resolve, reject) {
 			vm.client.get('http://localhost:3000/sprints')
 				.then(response => resolve(JSON.parse(response.response)))
-				.catch(error => reject(JSON.parse(error)));
+				.catch(error => reject(error));
 		});
 	}
 
