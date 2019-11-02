@@ -3,15 +3,24 @@
 	<require from="./components/today"></require>
 	<require from="./components/problems"></require>
 	<require from="./metrics"></require>
+	<require from="../../generic/date-format.filter"></require>
+	<require from="../../generic/capitalize.filter"></require>
 
 	<div class="sa-layout-dashboard-page_title">
 		<h1 class="sa-text --mega --bold">Ajouter un daily</h1>
 	</div>
 	<div class="sa-layout-dashboard-page_content">
-		<div class="sa-grid">
 
-			<div class="sa-grid_col">
-				<div class="sa-flash-message --error" show.bind="errors">
+    <div class="sa-grid_col" if.bind="!sprints.length && loaded">
+      <div class="sa-flash-message --error">
+        Vous devez <a route-href="route: sprintCreate;">créer un sprint</a> avant d'ajouter un daily.
+      </div>
+    </div>
+
+		<div class="sa-grid" if.bind="sprints.length && loaded">
+
+			<div class="sa-grid_col" show.bind="errors">
+				<div class="sa-flash-message --error">
 					Les champs <span repeat.for="error of errors">${error.rule.property.displayName} </span> sont obligatoires.
 				</div>
 			</div>
@@ -26,25 +35,17 @@
 						<div class="sa-grid">
 							<div class="sa-grid_col --half@on-desktop">
 								<fieldset>
-									<label for="current_sprint" class="sa-text --secondary">Current Sprint</label>
-									<select value.bind="daily.current_sprint & validate" name="current_sprint" class="sa-form_select --full">
-										<option value="75">Sprint #75</option>
-										<option value="76">Sprint #76</option>
-										<option value="77">Sprint #77</option>
-										<option value="78">Sprint #78</option>
-										<option value="79">Sprint #79</option>
+									<label for="sprint_id" class="sa-text --secondary">Current Sprint</label>
+									<select value.bind="daily.sprint & validate" name="sprint_id" class="sa-form_select --full">
+										<option repeat.for="sprint of sprints" model.bind="sprint">Sprint #${sprint.id}</option>
 									</select>
 								</fieldset>
 							</div>
 							<div class="sa-grid_col --half@on-desktop">
 								<fieldset>
 									<label for="current_day" class="sa-text --secondary">Day</label>
-									<select value.bind="daily.date & validate" name="current_sprint" class="sa-form_select --full">
-										<option value="12-03">Lundi 12</option>
-										<option value="13-03">Mardi 13</option>
-										<option value="14-03">Mercredi 14</option>
-										<option value="15-03">Jeudi 15</option>
-										<option value="16-03">Vendredi 16</option>
+									<select value.bind="daily.date & validate" name="current_day" class="sa-form_select --full">
+										<option repeat.for="day of daily.sprint.days" model.bind="day">${day | dateFormat:'ddd D MMMM' |capitalize}</option>
 									</select>
 								</fieldset>
 							</div>

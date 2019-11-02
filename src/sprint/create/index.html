@@ -11,8 +11,8 @@
 	<div class="sa-layout-dashboard-page_content">
 		<div class="sa-grid">
 
-			<div class="sa-grid_col">
-				<div class="sa-flash-message --error" show.bind="errors">
+			<div class="sa-grid_col" show.bind="errors">
+				<div class="sa-flash-message --error">
 					Les champs <span repeat.for="error of errors">"${error.rule.property.displayName}" </span> sont obligatoires.
 				</div>
 			</div>
@@ -41,10 +41,14 @@
 					</div>
 
 					<div class="sa-form_row">
-						<fieldset>
-							<label for="begin" class="sa-text --secondary">Début</label>
-							<date-picker date.two-way="sprint.begin & validate"></date-picker>
-						</fieldset>
+            <div class="sa-grid">
+              <div class="sa-grid_col">
+                <fieldset>
+                  <label for="begin" class="sa-text --secondary">Début</label>
+                  <date-picker date.two-way="sprint.begin & validate"></date-picker>
+                </fieldset>
+              </div>
+            </div>
 					</div>
 					<div class="sa-form_row">
 						<fieldset>

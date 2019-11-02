@@ -1,5 +1,8 @@
 <template>
+	<require from="../../../generic/date-format.filter"></require>
+	<require from="../../../generic/capitalize.filter"></require>
+
 	<a class="card inline" route-href="route: dailyDetails; params.bind: {id: daily.id}" repeat.for="daily of items">
-		${daily.date}
+		${daily.date | dateFormat:'dddd D MMMM' | capitalize}
 	</a>
 </template>

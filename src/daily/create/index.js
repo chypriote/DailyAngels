@@ -2,6 +2,7 @@ import {inject, NewInstance} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import {Daily} from '../../Entity/Daily';
 import {DailyAPI} from '../DailyAPI';
+import {SprintAPI} from '../../sprint/SprintAPI';
 import {ValidationController} from 'aurelia-validation';
 
 @inject(Router, NewInstance.of(ValidationController))
@@ -11,6 +12,15 @@ export class Create {
 		this.daily = new Daily();
 		this.router = router;
 		this.controller = controller;
+		this.sprints = [];
+		this.loaded = false;
+
+		let api = new SprintAPI();
+
+    api.getSprints()
+      .then(response => this.sprints = response)
+      .catch(error => console.log(error))
+      .finally(() => this.loaded = true);
 	}
 
 	saveDaily() {
@@ -19,9 +29,12 @@ export class Create {
 		vm.controller.validate()
 			.then(result => {
 				if (result.valid) {
+					let daily = Object.assign({}, vm.daily);
+					daily.sprint_id = daily.sprint.id;
+					daily.sprint = null;
 
 					let api = new DailyAPI();
-					api.postDaily(vm.daily)
+					api.postDaily(daily)
 						.then(response => vm.router.navigateToRoute('dailyDetails', {id: response.id}))
 						.catch(error => console.warn(error));
 

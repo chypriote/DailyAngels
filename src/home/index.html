@@ -1,10 +1,12 @@
 <template>
 	<h1>Hello World !</h1>
 
-	<a class="card inline" route-href="route: dailyDetails; params.bind: {id: 5}">
+	<a class="card inline" route-href="route: dailyDetails; params.bind: {id: 6}">
 		Daily test
 	</a>
-	<a class="card inline" route-href="route: sprintDetails; params.bind: {id: 75}">
-		Sprint test
+
+	<a class="card inline" repeat.for="sprint of sprints" route-href="route: sprintDetails; params.bind: {id: sprint.id}">
+		Sprint #${sprint.id}
 	</a>
+
 </template>

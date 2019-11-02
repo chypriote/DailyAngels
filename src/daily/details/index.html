@@ -3,17 +3,19 @@
 	<require from="./components/yesterday"></require>
 	<require from="./components/today"></require>
 	<require from="./components/problems"></require>
+	<require from="../../generic/date-format.filter"></require>
+	<require from="../../generic/capitalize.filter"></require>
 
 	<div class="sa-layout-dashboard-page_title">
-		<h1 class="sa-text --mega --bold">Daily du ${daily.date}</h1>
+		<h1 class="sa-text --mega --bold">Daily du ${daily.date | dateFormat:'dddd D MMMM' |capitalize}</h1>
 	</div>
 	<div class="sa-layout-dashboard-page_content">
 		<div class="sa-grid">
 			<div class="sa-grid_col --three-quarters@on-desktop">
 				<div class="sa-panel">
 					<div class="sa-category-title">
-						<a route-href="route: sprintDetails; params.bind: {id: daily.current_sprint}" class="sa-text --bold --giga --emphasis-darker">
-							Sprint #${daily.current_sprint}
+						<a route-href="route: sprintDetails; params.bind: {id: daily.sprint_id}" class="sa-text --bold --giga --emphasis-darker">
+							Sprint #${daily.sprint_id}
 						</a>
 					</div>
 

@@ -1,14 +1,14 @@
 <template>
 	<require from="./date-format.filter"></require>
 
-	<div class="sa-grid">
-		<div class="sa-grid_col --one-third@from-tablet">
+	<div class="sa-datepicker">
+		<div style="flex: 1">
 			<select name="day" id="day" class="sa-form_select --full" value.bind="day" change.delegate="updateDate()">
 				<option model.bind="null"></option>
 				<option repeat.for="day of days" model.bind="day + 1">${day + 1}</option>
 			</select>
 		</div>
-		<div class="sa-grid_col --one-third@from-tablet">
+		<div style="flex: 2; padding: 0 1rem">
 			<select name="month" class="sa-form_select --full" value.bind="month" change.delegate="updateDate()">
 				<option model.bind="null"></option>
 				<option model.bind="0">Janvier</option>
@@ -25,9 +25,10 @@
 				<option model.bind="11">Décembre</option>
 			</select>
 		</div>
-		<div class="sa-grid_col --one-third@from-tablet">
+		<div style="flex: 1.33">
 			<select name="year" id="year" class="sa-form_select --full" value.bind="year" change.delegate="updateDate()">
 				<option model.bind="null"></option>
+                <option model.bind="2018">2018</option>
 				<option model.bind="2017">2017</option>
 				<option model.bind="2016">2016</option>
 			</select>

@@ -3,17 +3,78 @@
     {
       "celerity": 6,
       "days": [
-        "2017-03-01T15:25:11.739Z",
-        "2017-03-02T15:25:11.739Z",
-        "2017-03-03T15:25:11.739Z",
-        "2017-03-06T15:25:11.739Z"
+        "2017-03-20T11:23:41.070Z",
+        "2017-03-21T11:23:41.070Z",
+        "2017-03-22T11:23:41.070Z",
+        "2017-03-23T11:23:41.070Z",
+        "2017-03-24T11:23:41.070Z",
+        "2017-03-27T10:23:41.070Z",
+        "2017-03-28T10:23:41.070Z",
+        "2017-03-29T10:23:41.070Z",
+        "2017-03-30T10:23:41.070Z"
       ],
-      "begin": "2017-03-01T15:25:11.739Z",
-      "end": "2017-03-05T23:00:00.000Z",
+      "begin": "2017-03-19T11:23:41.070Z",
+      "end": "2017-03-29T22:00:00.000Z",
       "devs": [
+        {
+          "name": "Boevi",
+          "workdays": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "goal": "Test",
+      "id": "23"
+    },
+    {
+      "celerity": 6,
+      "days": [
+        "2017-03-20T12:06:40.683Z",
+        "2017-03-21T12:06:40.683Z",
+        "2017-03-22T12:06:40.683Z",
+        "2017-03-23T12:06:40.683Z",
+        "2017-03-24T12:06:40.683Z",
+        "2017-03-27T11:06:40.683Z",
+        "2017-03-28T11:06:40.683Z",
+        "2017-03-29T11:06:40.683Z",
+        "2017-03-30T11:06:40.683Z",
+        "2017-03-31T11:06:40.683Z"
+      ],
+      "begin": "2017-03-19T12:06:40.683Z",
+      "end": "2017-03-30T22:00:00.000Z",
+      "devs": [
+        {
+          "name": "Boevi",
+          "workdays": [
+            "1",
+            "3",
+            "5",
+            1,
+            1,
+            1,
+            "2",
+            1,
+            1,
+            1
+          ]
+        },
         {
           "name": "Nico",
           "workdays": [
+            "0",
+            "0",
+            "0",
+            1,
+            1,
+            1,
             1,
             1,
             1,
@@ -21,96 +82,204 @@
           ]
         }
       ],
-      "id": 77
+      "goal": "Salut",
+      "id": "45"
     },
     {
       "celerity": 6,
       "days": [
-        "2017-03-01T15:26:50.206Z",
-        "2017-03-02T15:26:50.206Z",
-        "2017-03-03T15:26:50.206Z",
-        "2017-03-06T15:26:50.206Z",
-        "2017-03-07T15:26:50.206Z",
-        "2017-03-08T15:26:50.206Z"
+        "2017-07-25T11:12:19.616Z",
+        "2017-07-26T11:12:19.616Z",
+        "2017-07-27T11:12:19.616Z",
+        "2017-07-28T11:12:19.616Z",
+        "2017-07-31T11:12:19.616Z",
+        "2017-08-01T11:12:19.616Z",
+        "2017-08-02T11:12:19.616Z",
+        "2017-08-03T11:12:19.616Z",
+        "2017-08-04T11:12:19.616Z",
+        "2017-08-07T11:12:19.616Z",
+        "2017-08-08T11:12:19.616Z",
+        "2017-08-09T11:12:19.616Z",
+        "2017-08-10T11:12:19.616Z",
+        "2017-08-11T11:12:19.616Z"
       ],
-      "begin": "2017-03-01T15:26:50.206Z",
-      "end": "2017-03-07T23:00:00.000Z",
+      "begin": "2017-07-25T11:12:19.616Z",
+      "end": "2017-08-10T22:00:00.000Z",
       "devs": [
         {
-          "name": null,
+          "name": "Nicolas",
           "workdays": [
             1,
             1,
             1,
             1,
             1,
+            1,
+            1,
+            "0",
+            1,
+            1,
+            1,
+            1,
+            1,
             1
           ]
-        }
-      ],
-      "id": 78
-    },
-    {
-      "celerity": 6,
-      "days": [
-        "2017-03-01T15:28:07.323Z",
-        "2017-03-02T15:28:07.323Z",
-        "2017-03-03T15:28:07.323Z",
-        "2017-03-06T15:28:07.323Z",
-        "2017-03-07T15:28:07.323Z",
-        "2017-03-08T15:28:07.323Z"
-      ],
-      "begin": "2017-03-01T15:28:07.323Z",
-      "end": "2017-03-07T23:00:00.000Z",
-      "devs": [
+        },
         {
-          "name": null,
+          "name": "Regis",
           "workdays": [
             1,
             1,
             1,
             1,
+            "0",
+            "0",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1,
             1
           ]
         }
       ],
-      "id": 79
+      "goal": "Fundraising",
+      "id": "36"
     }
   ],
   "dailys": [
     {
-      "id": 5,
-      "current_sprint": "75",
-      "date": "12-03",
-      "metrics": {
-        "doing": 5,
-        "done": 12,
-        "status": 7,
-        "review": 3,
-        "reviewed": 8,
-        "blocked": 0,
-        "validation": 4
-      },
-      "yesterday": [
-        "Corriger des bugs sur le site",
-        "Continuer la mise en place du serveur staging Carapuce"
-      ],
       "today": [
-        "Ceci est un jambon",
-        "Traité le bug de signature de l'act d'adhésion!!!!",
-        "Continué sur les emails non reçus des admins"
+        "Cacacsqdsq"
+      ],
+      "yesterday": [
+        "Test"
+      ],
+      "problems": [],
+      "metrics": {
+        "done": "5",
+        "doing": "6",
+        "status": "7",
+        "review": "5",
+        "reviewed": "2",
+        "validation": "1",
+        "blocked": "2"
+      },
+      "sprint_id": "23",
+      "date": "2017-03-23T11:23:41.070Z",
+      "id": 6
+    },
+    {
+      "today": [
+        "OSpOZEpaoeza",
+        "zaezaezaeaz",
+        "zeaezaez"
+      ],
+      "yesterday": [
+        "SAlut",
+        "Reposnerazeaz"
       ],
       "problems": [
         {
-          "what": "Un problem",
-          "correction": "une solution"
-        },
-        {
-          "what": "Aie aie aie yayaya",
-          "correction": "mais c'est pas possible"
+          "what": "Aucna",
+          "correction": "Sakeaz"
         }
-      ]
+      ],
+      "metrics": {
+        "done": "12",
+        "doing": "5",
+        "status": "3",
+        "review": "4",
+        "reviewed": "5",
+        "validation": "6",
+        "blocked": "7"
+      },
+      "sprint": null,
+      "date": "2017-03-20T11:23:41.070Z",
+      "sprint_id": "23",
+      "id": 7
+    },
+    {
+      "today": [
+        "Commencer à travailler"
+      ],
+      "yesterday": [
+        "Manger une pomme",
+        "Servir une assiette"
+      ],
+      "problems": [
+        {
+          "what": "Pas de problème",
+          "correction": "Hé non"
+        }
+      ],
+      "metrics": {
+        "done": "12",
+        "doing": "5",
+        "status": "12",
+        "review": "8",
+        "reviewed": "7",
+        "validation": "4",
+        "blocked": "1"
+      },
+      "sprint": null,
+      "date": "2017-03-20T12:06:40.683Z",
+      "sprint_id": "45",
+      "id": 8
+    },
+    {
+      "today": [
+        "Porter une table"
+      ],
+      "yesterday": [
+        "Manger une pomme",
+        "Salazze"
+      ],
+      "problems": [],
+      "metrics": {
+        "done": "12",
+        "doing": "42",
+        "status": "10",
+        "review": "4",
+        "reviewed": "9",
+        "validation": "12",
+        "blocked": "0"
+      },
+      "sprint": null,
+      "date": "2017-07-25T11:12:19.616Z",
+      "sprint_id": "36",
+      "id": 9
+    },
+    {
+      "today": [
+        "Manger une pomme",
+        "Faire un daily"
+      ],
+      "yesterday": [
+        "Manger une pomme",
+        "Acheter un chat"
+      ],
+      "problems": [
+        {
+          "what": "Peoza",
+          "correction": "eza"
+        }
+      ],
+      "metrics": {
+        "done": "4",
+        "doing": "56",
+        "status": "8",
+        "review": "9",
+        "reviewed": "5",
+        "validation": "4",
+        "blocked": "5"
+      },
+      "sprint": null,
+      "date": "2017-08-02T11:12:19.616Z",
+      "sprint_id": "36",
+      "id": 10
     }
   ]
 }
